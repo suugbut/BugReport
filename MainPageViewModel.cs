@@ -6,7 +6,7 @@ public class MainPageViewModel
 {
     public ObservableCollection<Library> Libraries { get; } = [];
 
-    public ICommand UserStoppedTypingCommand { get; }
+    public ICommand SearchCommand { get; }
 
     void ReloadLibraries(IEnumerable<Library> libraries)
     {
@@ -20,7 +20,7 @@ public class MainPageViewModel
     public MainPageViewModel()
     {
         ReloadLibraries(LibraryRepo.GetAll());
-        UserStoppedTypingCommand = new Command<string>(
+        SearchCommand = new Command<string>(
         execute: s =>
         {
             if (string.IsNullOrWhiteSpace(s))

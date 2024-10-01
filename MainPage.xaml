@@ -10,12 +10,10 @@
         <CollectionView.Header>
             <HorizontalStackLayout>
                 <Entry x:Name="SearchBar"
-                       WidthRequest="200">
-                    <Entry.Behaviors>
-                        <tool:UserStoppedTypingBehavior Command="{Binding UserStoppedTypingCommand}"
-                                                        CommandParameter="{Binding Text, Source={Reference SearchBar}}" />
-                    </Entry.Behaviors>
-                </Entry>
+                       WidthRequest="200" />
+                <Button Text="Search"
+                        Command="{Binding SearchCommand}"
+                        CommandParameter="{Binding Text, Source={Reference SearchBar}}" />
             </HorizontalStackLayout>
         </CollectionView.Header>
         <CollectionView.ItemTemplate>
